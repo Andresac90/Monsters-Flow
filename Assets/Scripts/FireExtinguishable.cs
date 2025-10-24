@@ -60,7 +60,6 @@ public class FireExtinguishable : MonoBehaviour
 
     private void TryExtinguishFire()
     {
-        // This simulates the player using their water abilities to extinguish the fire
         hitCount++;
         
         if (hitCount >= waterNeededToExtinguish)

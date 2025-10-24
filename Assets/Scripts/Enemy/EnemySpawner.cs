@@ -89,16 +89,16 @@ public class EnemySpawner : MonoBehaviour
             currentRound++;
             BeginRound(currentRound);
 
-            // 3) Now spawn the wave
+            // 3) Spawn the wave
             yield return StartCoroutine(SpawnWaveRoutine());
 
             // 4) Wait until all those enemies are 100% cleared
             yield return StartCoroutine(WaitForWaveClear());
 
-            // 5) Round is cleared - show debug, or do any "round completed" logic
+            // 5) Round is cleared do breather period to not start next round immediately
             Debug.Log($"Round {currentRound} completed! Waiting {nextRoundDelay} secs...");
 
-            // 6) Wait the "breather" period before starting next round
+            // 6) Wait for the breather period before starting next round
             yield return new WaitForSeconds(nextRoundDelay);
         }
     }
@@ -118,7 +118,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (enemiesRemainingToSpawn > 0)
         {
-            // Only spawn if we have capacity
+            // Only spawn if there is capacity
             if (enemiesAlive < maxConcurrentEnemies)
             {
                 SpawnEnemy();

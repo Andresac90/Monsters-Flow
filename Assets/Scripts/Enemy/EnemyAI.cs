@@ -92,7 +92,7 @@ public class EnemyAI : MonoBehaviour
         }
         if (animator != null)
         {
-            animator.SetInteger("animation", 2); // Walking/Running
+            animator.SetInteger("animation", 2); 
         }
     }
 
@@ -107,7 +107,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (animator != null)
         {
-            animator.SetInteger("animation", 3); // Attack animation
+            animator.SetInteger("animation", 3); 
         }
         if (playerHealth != null)
         {
@@ -137,7 +137,7 @@ public class EnemyAI : MonoBehaviour
 
         if (animator != null)
         {
-            animator.SetInteger("animation", 5); // Death Animation
+            animator.SetInteger("animation", 5); 
         }
         onDeath?.Invoke();
 

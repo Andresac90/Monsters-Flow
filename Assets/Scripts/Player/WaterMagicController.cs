@@ -25,7 +25,7 @@ public class UseWaterTubeCommand : ICommand
 }
 #endregion
 
-/// Main controller for water‑based abilities: WaterBall, WaterBend, WaterTube.
+/// Main controller for water based abilities: WaterBall, WaterBend, WaterTube.
 public class WaterMagicController : MonoBehaviour
 {
     [Header("Water Magic References")]
@@ -125,7 +125,6 @@ public class WaterMagicController : MonoBehaviour
             if (handAnimator != null) handAnimator.SetInteger("animation", 3);
             Vector3 target = GetCrosshairTarget();
             waterBallController.ThrowWaterBall(target);
-            // If you later apply AOE on impact, use waterBallRadius here.
             activeWaterBall = null;
         }
 
